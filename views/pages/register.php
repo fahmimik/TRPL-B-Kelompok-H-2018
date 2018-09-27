@@ -3,12 +3,15 @@
 <html>
 <head>
 	<title>REGISTER</title>
-<link rel="stylesheet" href="resources/my.css">
+	<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/mycss/my.css">
+<script src="resources/bootstrap/js/bootstrap.min.js"></script>
+<script src="resources/jquery/jquery.min.js"></script>
 </head>
-<body>
+<body class="padding-about">
 <h1 align="center">REGISTER</h1>
-<br><br>
-
+<br><br><br>
+<div class="">
 	<div class="container">
 
 		<div class="col-md-5">
@@ -40,12 +43,12 @@
 						<input type="text" class="form-control" name="alamat" placeholder="Masukan Alamat" required>
 					</div>
 				</div>
-        <div class="form-group">
+        <!-- <div class="form-group">
 					<label class="col-sm-2 control-label">Telpon</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" name="telpon" placeholder="Masukan Telpon" required>
 					</div>
-				</div>
+				</div> -->
 
 
 				<div class="form-group">
@@ -57,8 +60,8 @@
 					</div>
 
 				</div>
+</div>
 
-				</div>
 
 			</form>
 

@@ -3,7 +3,7 @@ class DoctorController{
 
   public function showDoctorAppointment(){
     // $posts = Doctor::showDoctorAppointment();
-    require_once("views/pages/homeDoctor.php");
+    require_once("views/pages/doctorHome.php");
 
   }
 

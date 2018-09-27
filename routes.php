@@ -5,10 +5,13 @@ require_once('controllers/c_'.$controller.'.php');
 
 switch ($controller) {
 
-case 'home':
-$controller=new HomeController();
-require_once('models/m_home.php');
-break;
+  case 'home':
+  $controller=new HomeController();
+  require_once('models/m_home.php');
+  require_once('models/m_admin.php');
+  require_once('models/m_doctor.php');
+  require_once('models/m_patient.php');
+  break;
 
   case 'login':
   $controller= new LoginController();
@@ -20,6 +23,11 @@ break;
   require_once('models/m_register.php');
   break;
 
+  case 'admin':
+  $controller=new AdminController();
+  require_once('models/m_admin.php');
+  break;
+
 
 
 // tinggal nambah case yang laen
@@ -28,9 +36,6 @@ break;
 }
 
 $controller ->{ $action }();
-
-
-
 }
 
 $controllers = array(
@@ -39,8 +44,10 @@ $controllers = array(
 ],
 'register' => ['register', 'addRegister', 'error',
 ],
-'home' => [ 'home','homeDoctor','homePatient',
-  ],
+'home' => [ 'home','doctorHome','patientHome', 'about',
+],
+'admin' => ['showAllDoctor' , 'addDoctor', 'tampilAddDoctor', 'deleteDoctor', 'editDoctor' , 'editDataDoctor',
+],
 
 );
 
@@ -54,6 +61,4 @@ if (array_key_exists($controller, $controllers)) {
 } else {
 	call($controller,'error');
 }
-
-
  ?>

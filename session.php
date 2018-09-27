@@ -2,7 +2,7 @@
 
 $connection = mysql_connect("localhost" , "root" , " ");
 
-$db = mysql_select_db("trpl",$connection);
+$db = mysql_select_db("trpl-10b",$connection);
 session_start();
 
 $user_check =$_SESSION['login'];

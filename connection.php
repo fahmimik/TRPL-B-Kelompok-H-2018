@@ -2,7 +2,7 @@
 $host = "localhost";
 $username = "root";
 $pass = "";
-$db = "trpl";
+$db = "trpl-10b";
 
 
 class DB{
@@ -17,7 +17,7 @@ public static function getInstance(){
   if (!isset(self::$instance)) {
     //session_start();
     $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
-    self::$instance = new PDO('mysql:host=localhost;dbname=trpl','root','',$pdo_options);
+    self::$instance = new PDO('mysql:host=localhost;dbname=trpl-10b','root','',$pdo_options);
   }
   return self::$instance;
 }

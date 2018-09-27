@@ -5,7 +5,7 @@
 class LoginController{
 
   public function login(){
-    // $error='';
+     $error='';
 
     require_once('views/pages/login.php');
 
@@ -18,13 +18,15 @@ public function error(){
 public function authen()
     {
         if (!isset($_POST['username']) || !isset($_POST['password'])) {
-            // include('./views/pages/login.php');
-        } else {
+
+}
+        else {
 
             if (Login::authen($_POST['username'], $_POST['password']) == null) {
-                require_once('views/pages/login.php');
+                // require_once('views/pages/login.php');
 
-            } else {
+            }
+             else {
                 $result = Login::authen($_POST['username'], $_POST['password']);
                 $result = $result->fetchAll();
                 if (count($result) > 0) {
@@ -35,21 +37,18 @@ public function authen()
                         if ($_SESSION['level'] == 1) {
                             header("location:index.php?controller=home&action=home");
                         } else if ($_SESSION['level'] == 2) {
-                            header("location:index.php?controller=home&action=homeDoctor");
+                            header("location:index.php?controller=home&action=doctorHome");
                         } else if ($_SESSION['level'] == 3) {
-                            header("location:index.php?controller=home&action=homePatient");
+                            header("location:index.php?controller=home&action=patientHome");
                         }
                     }
-
                 }
                 else {
-
                     header("location:index.php?controller=home&action=login");
                 }
-
-
             }
         }
     }
-}
+  }
+
  ?>

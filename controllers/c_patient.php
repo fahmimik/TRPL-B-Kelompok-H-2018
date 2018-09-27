@@ -3,7 +3,7 @@ class PatientController{
 
   public function showPatientAppointment(){
     $posts = Patient::showPatientAppointment();
-    require_once("views/pages/homePatient.php");
+    require_once("views/pages/patientHome.php");
 
   }
 
