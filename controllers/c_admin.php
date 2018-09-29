@@ -3,8 +3,7 @@ class AdminController{
 
 
   public function showAllDoctor(){
-    $posts = Admin::showAllDoctor();
-    require_once("views/pages/adminHome.php");
+    require_once ('views/pages/adminHome.php');
   }
 
 

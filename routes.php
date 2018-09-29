@@ -28,6 +28,10 @@ switch ($controller) {
   require_once('models/m_admin.php');
   break;
 
+  case 'poli':
+  $controller=new PoliController();
+  require_once('models/m_poli.php');
+  break;
 
 
 // tinggal nambah case yang laen
@@ -47,6 +51,8 @@ $controllers = array(
 'home' => [ 'home','doctorHome','patientHome', 'about',
 ],
 'admin' => ['showAllDoctor' , 'addDoctor', 'tampilAddDoctor', 'deleteDoctor', 'editDoctor' , 'editDataDoctor',
+],
+'poli' => [ 'showAllPoli' , 'poliAddPoli' , 'addPoli' , 'poli' , 'deletePoli' , 'editPoli' , 'editDataPoli' ,
 ],
 
 );

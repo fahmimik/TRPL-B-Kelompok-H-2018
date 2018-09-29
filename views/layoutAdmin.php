@@ -6,8 +6,8 @@
             <span class="icon-bar"></span><span class="icon-bar"></span></button></div>
         <div class="collapse navbar-collapse " id="navcol-1">
             <ul class="nav navbar-nav">
-                <li><a class="" href=#>fitur1</a></li>
-                <li><a class="" href=#>fitur2</a></li>
+                <li><a class="" href="index.php?controller=home&action=home">Home</a></li>
+                <li><a class="" href="index.php?controller=poli&action=poli">Poli</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
