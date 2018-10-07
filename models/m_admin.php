@@ -47,10 +47,12 @@ public static function editDoctor($id){
   return $list;
 }
 
-public static function editDataDoctor($id,$username,$password,$nama,$alamat){
+public static function editDataDoctor($id,$password,$nama,$alamat){
   $db=DB::getInstance();
-  $req = $db->query("UPDATE users set username='$username', password='$password', nama='$nama', alamat='$alamat'
-  where id_user='$id' ");
+  // $pass='pass';
+  $req = $db->query("UPDATE users set password='$password', nama='$nama', alamat='$alamat'
+   where id_user='$id'
+  ");
   return $req;
 
 }

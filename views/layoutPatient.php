@@ -10,6 +10,7 @@
                 <li><a class="" href=#>fitur2</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.php?controller=patient&action=showPatientProfile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
               <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 
             </ul>

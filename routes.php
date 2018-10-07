@@ -33,6 +33,16 @@ switch ($controller) {
   require_once('models/m_poli.php');
   break;
 
+  case 'patient':
+  $controller=new PatientController();
+  require_once('models/m_patient.php');
+  break;
+
+  case 'doctor':
+  $controller=new DoctorController();
+  require_once('models/m_doctor.php');
+  break;
+
 
 // tinggal nambah case yang laen
 
@@ -53,6 +63,10 @@ $controllers = array(
 'admin' => ['showAllDoctor' , 'addDoctor', 'tampilAddDoctor', 'deleteDoctor', 'editDoctor' , 'editDataDoctor',
 ],
 'poli' => [ 'showAllPoli' , 'poliAddPoli' , 'addPoli' , 'poli' , 'deletePoli' , 'editPoli' , 'editDataPoli' ,
+],
+'doctor' => [ 'showDoctorProfile' , 'editDoctorProfile', 'editDataDoctor',
+],
+'patient' => [ 'showPatientProfile', 'editPatientProfile', 'editDataPatient' ,
 ],
 
 );

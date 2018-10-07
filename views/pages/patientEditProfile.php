@@ -1,4 +1,4 @@
-<?php require_once('views/layoutAdmin.php') ?>
+<?php require_once('views/layoutPatient.php') ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +6,7 @@
   </head>
   <body>
 
-    <h1 class="padding-about" align="center">EDIT DOKTER</h1>
+    <h1 class="padding-about" align="center">EDIT PROFIL</h1>
     <br><br>
     <div class="container">
       <div class="col-md-6">
@@ -14,8 +14,8 @@
         <?php foreach ($posts as $post) { ?>
 
 
-        <input type="hidden" name="controller" value="admin">
-        <input type="hidden" name="action" value="editDataDoctor">
+        <input type="hidden" name="controller" value="patient">
+        <input type="hidden" name="action" value="editDataPatient">
         <input type="hidden" name="id" value="<?php echo $post->id; ?>">
           <div class="form-group">
             <label class="col-sm-2 control-label">username</label>
@@ -44,7 +44,7 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button type="submit" class="btn btn-success">Simpan</button>
-              <a href="index.php?controller=home&action=home"><button type="button" class="btn btn-success">Back </button>
+              <a href="index.php?controller=patient&action=showPatientProfile"><button type="button" class="btn btn-success">Back </button>
             </div>
           </div>
           <?php } ?>

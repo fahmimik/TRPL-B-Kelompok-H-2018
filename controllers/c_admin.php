@@ -24,8 +24,10 @@ class AdminController{
   }
 
   public function editDataDoctor(){
-    $posts = Admin::editDataDoctor($_GET["id"], $_GET["password"], $_GET["username"], $_GET["nama"], $_GET["alamat"]);
+
+    $posts = Admin::editDataDoctor($_GET["id"], $_GET["password"], $_GET["nama"], $_GET["alamat"]);
     header("location:index.php?controller=home&action=home");
+
   }
 
   public function deleteDoctor(){
