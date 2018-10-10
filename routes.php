@@ -1,84 +1,84 @@
 <?php
 function call($controller, $action){
 
-require_once('controllers/c_'.$controller.'.php');
+  require_once('controllers/c_'.$controller.'.php');
 
-switch ($controller) {
+  switch ($controller) {
 
-  case 'home':
-  $controller=new HomeController();
-  require_once('models/m_home.php');
-  require_once('models/m_admin.php');
-  require_once('models/m_doctor.php');
-  require_once('models/m_patient.php');
-  break;
+    case 'home':
+    $controller=new HomeController();
+    require_once('models/m_home.php');
+    require_once('models/m_admin.php');
+    require_once('models/m_doctor.php');
+    require_once('models/m_patient.php');
+    break;
 
-  case 'login':
-  $controller= new LoginController();
-  require_once('models/m_login.php');
-  break;
+    case 'login':
+    $controller= new LoginController();
+    require_once('models/m_login.php');
+    break;
 
-  case 'register':
-  $controller=new RegisterController();
-  require_once('models/m_register.php');
-  break;
+    case 'register':
+    $controller=new RegisterController();
+    require_once('models/m_register.php');
+    break;
 
-  case 'admin':
-  $controller=new AdminController();
-  require_once('models/m_admin.php');
-  break;
+    case 'admin':
+    $controller=new AdminController();
+    require_once('models/m_admin.php');
+    break;
 
-  case 'poli':
-  $controller=new PoliController();
-  require_once('models/m_poli.php');
-  break;
+    case 'poli':
+    $controller=new PoliController();
+    require_once('models/m_poli.php');
+    break;
 
-  case 'patient':
-  $controller=new PatientController();
-  require_once('models/m_patient.php');
-  break;
+    case 'patient':
+    $controller=new PatientController();
+    require_once('models/m_patient.php');
+    break;
 
-  case 'doctor':
-  $controller=new DoctorController();
-  require_once('models/m_doctor.php');
-  break;
-
-
-// tinggal nambah case yang laen
+    case 'doctor':
+    $controller=new DoctorController();
+    require_once('models/m_doctor.php');
+    break;
 
 
-}
+    // tinggal nambah case yang laen
 
-$controller ->{ $action }();
+
+  }
+
+  $controller ->{ $action }();
 }
 
 $controllers = array(
 
-'login' => ['login','error','authen',
-],
-'register' => ['register', 'addRegister', 'error',
-],
-'home' => [ 'home','doctorHome','patientHome', 'about',
-],
-'admin' => ['showAllDoctor' , 'addDoctor', 'tampilAddDoctor', 'deleteDoctor', 'editDoctor' , 'editDataDoctor',
-],
-'poli' => [ 'showAllPoli' , 'poliAddPoli' , 'addPoli' , 'poli' , 'deletePoli' , 'editPoli' , 'editDataPoli' ,
-],
-'doctor' => [ 'showDoctorProfile' , 'editDoctorProfile', 'editDataDoctor',
-],
-'patient' => [ 'showPatientProfile', 'editPatientProfile', 'editDataPatient' ,
-],
+  'login' => ['login','error','authen',
+  ],
+  'register' => ['register', 'addRegister', 'error',
+  ],
+  'home' => [ 'home','doctorHome','patientHome', 'about',
+  ],
+  'admin' => ['showAllDoctor' , 'addDoctor', 'tampilAddDoctor', 'deleteDoctor', 'editDoctor' , 'editDataDoctor', 'showAllPatient',
+  ],
+  'poli' => [ 'showAllPoli' , 'poliAddPoli' , 'addPoli' , 'poli' , 'deletePoli' , 'editPoli' , 'editDataPoli' ,
+  ],
+  'doctor' => [ 'showDoctorProfile' , 'editDoctorProfile', 'editDataDoctor',
+  ],
+  'patient' => [ 'showPatientProfile', 'editPatientProfile', 'editDataPatient' ,
+  ],
 
 );
 
 if (array_key_exists($controller, $controllers)) {
-	if (in_array($action, $controllers[$controller])) {
-		call($controller,$action);
-	} else {
-		call($controller,'error');
-	}
+  if (in_array($action, $controllers[$controller])) {
+    call($controller,$action);
+  } else {
+    call($controller,'error');
+  }
 
 } else {
-	call($controller,'error');
+  call($controller,'error');
 }
- ?>
+?>

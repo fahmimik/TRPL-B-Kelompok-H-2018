@@ -2,17 +2,18 @@
 class AdminController{
 
 
-  public function showAllDoctor(){
+  public function showAllDoctor()
+  {
     require_once ('views/pages/adminHome.php');
   }
 
-
-  public function tampilAddDoctor(){
+  public function tampilAddDoctor()
+  {
     require_once ('views/pages/adminAddDoctor.php');
   }
 
-  public function addDoctor(){
-
+  public function addDoctor()
+  {
     $posts = Admin::addDoctor($_GET["username"], $_GET["password"], $_GET["nama"], $_GET["alamat"]);
     header("location:index.php?controller=home&action=home");
   }
@@ -23,18 +24,24 @@ class AdminController{
     require_once('views/pages/adminEditDoctor.php');
   }
 
-  public function editDataDoctor(){
-
+  public function editDataDoctor()
+  {
     $posts = Admin::editDataDoctor($_GET["id"], $_GET["password"], $_GET["nama"], $_GET["alamat"]);
     header("location:index.php?controller=home&action=home");
-
   }
 
-  public function deleteDoctor(){
+  public function deleteDoctor()
+  {
     $posts = Admin::deleteDoctor($_GET["id"]);
     header("location:index.php?controller=home&action=home");
   }
 
+  public function showAllPatient()
+  {
+    $posts = Admin::showAllPatient();
+    require_once("views/pages/adminAllPatient.php");
+  }
+
 
 }
- ?>
+?>

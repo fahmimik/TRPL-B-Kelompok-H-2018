@@ -8,7 +8,6 @@ public function home(){
     exit;
   }
   $posts = Admin::showAllDoctor();
-  // require_once("views/pages/homeAdmin.php");
   require_once("views/pages/adminHome.php");
 }
 

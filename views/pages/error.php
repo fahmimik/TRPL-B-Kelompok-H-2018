@@ -1,3 +1,3 @@
 <?php
-echo "eror  ...";
+// echo "eror  ...";
  ?>

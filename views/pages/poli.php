@@ -19,6 +19,7 @@
   <th>No</th>
   <th>id Poli</th>
   <th>Nama Poli</th>
+  <th>Action</th>
   <?php $i=1; ?>
   <?php foreach ($posts as $post) { ?>
     <tr>
