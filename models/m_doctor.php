@@ -16,16 +16,23 @@ function __construct($id,$username,$password,$nama,$alamat){
 }
 
 
-// public static function showDoctorJadwal(){
-// $list=[];
-// $db = DB::getInstance();
-// $req = $db->query("SELECT *FROM jadwal");
-// foreach ($req->fetchAll() as $post) {
-//   $list[] = new Doctor($post['id_user'],$post['id_user'],$post['id_poli'],$post['id_hari'],$post['id_jam']
-//   );
-// }
-// return $list;
-// }
+public static function showDoctorJadwal(){
+$list=[];
+$db = DB::getInstance();
+$req = $db->query("SELECT *FROM jadwal ");
+foreach ($req->fetchAll() as $post) {
+  $list[] = array(
+    'id_jadwal' => $post['id_jadwal'],
+    'nama' => $post['nama'],
+    'id_poli' => $post['id_poli'],
+    'hari' => $post['hari'],
+    'waktu' => $post['waktu']
+
+  // new Doctor($post['id_user'],$post['id_user'],$post['id_poli'],$post['id_hari'],$post['id_jam']
+  );
+}
+return $list;
+}
 
 public static function showDoctorProfile(){
   $list=[];

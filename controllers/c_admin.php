@@ -43,5 +43,51 @@ class AdminController{
   }
 
 
+
+  public function showAllJadwalDoctor()
+  {
+    $posts = Admin::showAllJadwalDoctor();
+    require_once("views/pages/adminJadwalDoctor.php");
+  }
+
+  public function addJadwalDoctor()
+  {
+    // $posts = Admin::addDoctor($_GET["username"], $_GET["password"], $_GET["nama"], $_GET["alamat"]);
+    $posts = Admin::showAllDoctor();
+    $posts2 = poli::showAllPoli();
+    $posts3 = Admin::getWaktu();
+    require_once("views/pages/adminAddJadwalDoctor.php");
+  }
+
+  public function addDataJadwalDoctor()
+  {
+    $posts = Admin::addDataJadwalDoctor($_GET["nama"], $_GET["nama_poli"], $_GET["hari"], $_GET["waktu"]);
+    header("location:index.php?controller=admin&action=showAllJadwalDoctor");
+    ;
+  }
+  public function deleteJadwalDoctor()
+  {
+    $posts = Admin::deleteJadwalDoctor($_GET["id"]);
+    header("location:index.php?controller=admin&action=showAllJadwalDoctor");
+  }
+
+  public function editJadwalDoctor(){
+    $posts = Admin::editJadwalDoctor($_GET["id"]);
+    $postsw = Admin::getWaktu();
+    require_once('views/pages/adminEditJadwalDoctor.php');
+  }
+
+  public function editDataJadwalDoctor(){
+    $posts = Admin::editDataJadwalDoctor($_GET["id_jadwal"], $_GET["hari"], $_GET["waktu"]);
+    header("location:index.php?controller=admin&action=showAllJadwalDoctor");
+
+  }
+
+
+  // public function editJadwalDoctor(){
+  //
+  // }
+
+
 }
 ?>

@@ -26,6 +26,8 @@ function call($controller, $action){
     case 'admin':
     $controller=new AdminController();
     require_once('models/m_admin.php');
+    require_once('models/m_poli.php');
+    // require_once('models/m_waktu.php');
     break;
 
     case 'poli':
@@ -60,7 +62,8 @@ $controllers = array(
   ],
   'home' => [ 'home','doctorHome','patientHome', 'about',
   ],
-  'admin' => ['showAllDoctor' , 'addDoctor', 'tampilAddDoctor', 'deleteDoctor', 'editDoctor' , 'editDataDoctor', 'showAllPatient',
+  'admin' => ['showAllDoctor' , 'addDoctor', 'tampilAddDoctor', 'deleteDoctor', 'editDoctor' , 'editDataDoctor', 'showAllPatient', 'showAllJadwalDoctor',
+  'addJadwalDoctor', 'addDataJadwalDoctor', 'deleteJadwalDoctor', 'editJadwalDoctor', 'editDataJadwalDoctor',
   ],
   'poli' => [ 'showAllPoli' , 'poliAddPoli' , 'addPoli' , 'poli' , 'deletePoli' , 'editPoli' , 'editDataPoli' ,
   ],

@@ -3,7 +3,8 @@
         <div class="navbar-header"><a class="navbar-brand" href="index.php">SELEBEW</a>
           <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
             <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
-            <span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+            <span class="icon-bar"></span><span class="icon-bar"></span></button>
+          </div>
         <div class="collapse navbar-collapse " id="navcol-1">
             <ul class="nav navbar-nav">
                 <li><a class="" href="index.php">Home</a></li>

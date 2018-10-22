@@ -1,4 +1,4 @@
-<?php require_once('views/layoutDoctor.php') ?>
+<?php require_once('views/layoutAdmin.php') ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,7 +12,7 @@
     <h1 align="center">Jadwal Dokter</h1>
 
     <div class="container">
-      <!-- <a href="?controller=admin&action=addJadwalDoctor"><button type="button" class="btn btn-info">Tambah</button></a> -->
+      <a href="?controller=admin&action=addJadwalDoctor"><button type="button" class="btn btn-info">Tambah</button></a>
       <br><br>
       <!-- <table class="table">
 
@@ -33,7 +33,7 @@
                       <th>Poli</th>
                       <th>Hari</th>
                       <th>Jam</th>
-
+                      <th>Action</th>
                       <?php foreach ($posts as $post) { ?>
                         <tr>
                           <td><?php echo $post['id_jadwal']  ?></td>
@@ -41,7 +41,10 @@
                           <td><?php echo $post['nama_poli'] ?></td>
                           <td><?php echo $post['hari']  ?></td>
                           <td><?php echo $post['waktu']  ?></td>
-
+                          <td>
+                            <a href="?controller=admin&action=editJadwalDoctor&id=<?php echo $post['id_jadwal'] ?>"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a href="?controller=admin&action=deleteJadwalDoctor&id=<?php echo $post['id_jadwal'] ?>"><span class="glyphicon glyphicon-trash"></span></a>
+                          </td>
 
                         </tr><?php $i;} ?>
 
