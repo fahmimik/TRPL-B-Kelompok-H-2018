@@ -60,7 +60,7 @@ $controllers = array(
   ],
   'register' => ['register', 'addRegister', 'error',
   ],
-  'home' => [ 'home','doctorHome','patientHome', 'about',
+  'home' => [ 'home','doctorHome','patientHome', 'about', 'showDoctorJadwalHome',
   ],
   'admin' => ['showAllDoctor' , 'addDoctor', 'tampilAddDoctor', 'deleteDoctor', 'editDoctor' , 'editDataDoctor', 'showAllPatient', 'showAllJadwalDoctor',
   'addJadwalDoctor', 'addDataJadwalDoctor', 'deleteJadwalDoctor', 'editJadwalDoctor', 'editDataJadwalDoctor',

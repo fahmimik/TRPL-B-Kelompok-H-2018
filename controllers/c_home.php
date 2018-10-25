@@ -16,7 +16,7 @@ public function doctorHome(){
     header("location:index.php?controller=login&action=login");
     exit;
   }
-  $posts= Doctor::showDoctorJadwal();
+  $posts= Home::showDoctorJadwalHome();
   require_once("views/pages/doctorHome.php");
 }
 
