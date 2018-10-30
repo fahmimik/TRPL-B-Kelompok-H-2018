@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2018 at 07:01 PM
+-- Generation Time: Oct 25, 2018 at 06:05 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.1.21
 
@@ -89,7 +89,8 @@ CREATE TABLE `jadwal` (
 INSERT INTO `jadwal` (`id_jadwal`, `id_user`, `id_poli`, `hari`, `id_waktu`) VALUES
 (5, 6, 1, 'selasa', 1),
 (8, 7, 10, 'selasa', 3),
-(11, 2, 5, 'jumat', 3);
+(11, 2, 5, 'senin', 2),
+(12, 7, 1, 'rabu', 3);
 
 -- --------------------------------------------------------
 
@@ -252,7 +253,7 @@ ALTER TABLE `detail_waktu`
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `poli`

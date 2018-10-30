@@ -4,6 +4,8 @@
 <html>
   <head>
     <title></title>
+    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="resources/jquery/jquery.min.js"></script>
   </head>
   <body>
     <h1 class="padding-about" align="center">TAMBAH DOKTER</h1>

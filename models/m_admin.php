@@ -1,21 +1,21 @@
 <?php
 class Admin{
-  public $id;
-  public $username;
-  public $password;
-  public $nama;
-  public $alamat;
+  // public $id;
+  // public $username;
+  // public $password;
+  // public $nama;
+  // public $alamat;
   // public $telepon;
-  public $waktu;
+  // public $waktu;
 
-  function __construct($id,$username,$password,$level,$nama,$alamat,$waktu){
-    $this->id=$id;
-    $this->username=$username;
-    $this->password=$password;
-    $this->level=$level;
-    $this->nama=$nama;
-    $this->alamat=$alamat;
-    $this->waktu=$waktu;
+function __construct(/*$id,$username,$password,$level,$nama,$alamat,$waktu*/){
+    // $this->id=$id;
+    // $this->username=$username;
+    // $this->password=$password;
+    // $this->level=$level;
+    // $this->nama=$nama;
+    // $this->alamat=$alamat;
+    // $this->waktu=$waktu;
 
   }
 
@@ -31,7 +31,15 @@ class Admin{
     $db = DB::getInstance();
     $req = $db->query("SELECT *FROM users where level=2");
     foreach ($req->fetchAll() as $post) {
-      $list[] = new Admin($post['id_user'],$post['username'],$post['password'],$post['level'],$post['nama'],$post['alamat'],0
+      $list[] = array(
+        'id_user' => $post['id_user'],
+        'username' => $post['username'],
+        'password' => $post['password'],
+        'level' => $post['level'],
+        'nama' => $post['nama'],
+        'alamat' => $post['alamat'],
+
+      // new Admin($post['id_user'],$post['username'],$post['password'],$post['level'],$post['nama'],$post['alamat'],0
     );
   }
   return $list;
@@ -43,7 +51,14 @@ public static function editDoctor($id){
 
   $req = $db->query("SELECT * FROM users where id_user=$id");
   foreach ($req -> fetchAll() as $post) {
-  $list[] = new Admin($post['id_user'],$post['username'],$post['password'],$post['level'],$post['nama'],$post['alamat'],0
+  $list[] = array (
+    'id_user' => $post['id_user'],
+    'username' => $post['username'],
+    'password' => $post['password'],
+    'level' => $post['level'],
+    'nama' => $post['nama'],
+    'alamat' => $post['alamat'],
+  // new Admin($post['id_user'],$post['username'],$post['password'],$post['level'],$post['nama'],$post['alamat'],0
   );
 
 }
@@ -71,7 +86,14 @@ public static function editDataDoctor($id,$password,$nama,$alamat){
     $db = DB::getInstance();
     $req = $db->query("SELECT *FROM users where level=3");
     foreach ($req->fetchAll() as $post) {
-      $list[] = new Admin($post['id_user'],$post['username'],$post['password'],0,$post['nama'],$post['alamat'],0
+      $list[] = array(
+        'id_user' => $post['id_user'],
+        'username' => $post['username'],
+        'password' => $post['password'],
+        'nama' => $post['nama'],
+        'alamat' => $post['alamat']
+
+      // new Admin($post['id_user'],$post['username'],$post['password'],0,$post['nama'],$post['alamat'],0
     );
   }
   return $list;
@@ -89,22 +111,10 @@ public static function showAllJadwalDoctor(){
       'hari' => $post['hari'],
       'waktu' => $post['waktu']
 
-    // new Admin($post['id_jadwal'],$post['nama'],$post['nama_poli'],$post['hari'],$post['waktu'],0,0
   );
   }
   return $list;
 }
-
-// public static function showAllWaktu(){
-//   $list=[];
-//   $db = DB::getInstance();
-//   $req = $db->query("SELECT *FROM waktu");
-//   foreach ($req->fetchAll() as $post){
-//     $list[] = new Admin($post['id_waktu'],0,0,0,0,0,$post['waktu']
-//   );
-//   }
-//   return $list;
-// }
 
 public static function addDataJadwalDoctor($nama,$nama_poli,$hari,$waktu){
   // echo $nama;

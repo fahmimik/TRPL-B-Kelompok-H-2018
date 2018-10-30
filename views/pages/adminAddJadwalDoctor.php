@@ -4,8 +4,6 @@
 <head>
   <meta charset="utf-8">
   <title></title>
-  <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="resources/mycss/my.css">
   <script src="resources/bootstrap/js/bootstrap.min.js"></script>
   <script src="resources/jquery/jquery.min.js"></script>
 </head>
@@ -26,7 +24,7 @@
             <label class="col-sm-4 control-label" style="text-align:left">Nama Dokter</label>
               <select name="nama" class="col-sm-4 btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <span class="caret"></span>
                 <?php foreach ($posts as $post) { ?>
-                <option><?php echo $post->nama; ?> </option>
+                <option><?php echo $post['nama']; ?> </option>
               <?php } ?>
               </select>
           </div>
@@ -34,7 +32,7 @@
             <label class="col-sm-4 control-label" style="text-align:left">Nama Poli</label>
               <select name="nama_poli" class="col-sm-4 btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <span class="caret"></span>
                 <?php foreach ($posts2 as $post) { ?>
-                <option><?php echo $post->nama_poli; ?> </option>
+                <option><?php echo $post['nama_poli']; ?> </option>
               <?php } ?>
               </select>
           </div>
@@ -66,7 +64,7 @@
               <a href="index.php?controller=admin&action=showAllJadwalDoctor">
                 <button type="button" class="btn btn-success">Kembali</button>
 
-          
+
             </div>
 
           </div>

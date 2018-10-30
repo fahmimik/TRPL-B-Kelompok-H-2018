@@ -3,6 +3,8 @@
 <html>
   <head>
     <title></title>
+    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="resources/jquery/jquery.min.js"></script>
   </head>
   <body>
 
@@ -16,11 +18,11 @@
 
         <input type="hidden" name="controller" value="poli">
         <input type="hidden" name="action" value="editDataPoli">
-        <input type="hidden" name="id" value="<?php echo $post->id; ?>">
+        <input type="hidden" name="id" value="<?php echo $post['id_poli']; ?>">
           <div class="form-group">
             <label class="col-sm-2 control-label">Nama Poli</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="nama_poli" placeholder="Masukan Nama Poli" value="<?php echo $post->nama_poli ?>">
+              <input type="text" class="form-control" name="nama_poli" placeholder="Masukan Nama Poli" value="<?php echo $post['nama_poli'] ?>">
             </div>
           </div>
 

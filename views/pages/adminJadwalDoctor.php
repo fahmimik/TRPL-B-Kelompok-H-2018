@@ -3,8 +3,6 @@
 <html>
   <head>
     <title></title>
-    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="resources/mycss/my.css">
   <script src="resources/bootstrap/js/bootstrap.min.js"></script>
   <script src="resources/jquery/jquery.min.js"></script>
   </head>
@@ -12,7 +10,7 @@
     <h1 align="center">Jadwal Dokter</h1>
 
     <div class="container">
-      <a href="?controller=admin&action=addJadwalDoctor"><button type="button" class="btn btn-info">Tambah</button></a>
+      <a href="?controller=admin&action=addJadwalDoctor"><button type="button" class="btn btn-info">Tambah Jadwal</button></a>
       <br><br>
       <!-- <table class="table">
 
@@ -46,7 +44,7 @@
                             <a href="?controller=admin&action=deleteJadwalDoctor&id=<?php echo $post['id_jadwal'] ?>"><span class="glyphicon glyphicon-trash"></span></a>
                           </td>
 
-                        </tr><?php $i;} ?>
+                        </tr><?php } ?>
 
                     </tr>
                   </thead>

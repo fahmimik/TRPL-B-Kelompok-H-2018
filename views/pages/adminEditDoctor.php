@@ -3,6 +3,8 @@
 <html>
   <head>
     <title></title>
+    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="resources/jquery/jquery.min.js"></script>
   </head>
   <body>
 
@@ -16,29 +18,29 @@
 
         <input type="hidden" name="controller" value="admin">
         <input type="hidden" name="action" value="editDataDoctor">
-        <input type="hidden" name="id" value="<?php echo $post->id; ?>">
+        <input type="hidden" name="id" value="<?php echo $post['id_user']; ?>">
           <div class="form-group">
             <label class="col-sm-2 control-label">username</label>
             <div class="col-sm-10">
-              <label class="col-sm-2 control-label"><?php echo $post->username ?></label>
+              <label class="col-sm-2 control-label"><?php echo $post['username'] ?></label>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">password</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="password" placeholder="Masukan Password" value="<?php echo $post->password ?>">
+              <input type="text" class="form-control" name="password" placeholder="Masukan Password" value="<?php echo $post['password'] ?>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">nama</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="nama" placeholder="Masukan Nama" value="<?php echo $post->nama ?>">
+              <input type="text" class="form-control" name="nama" placeholder="Masukan Nama" value="<?php echo $post['nama'] ?>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">alamat</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="alamat" placeholder="Masukan Alamat" value="<?php echo $post->alamat ?>">
+              <input type="text" class="form-control" name="alamat" placeholder="Masukan Alamat" value="<?php echo $post['alamat'] ?>">
             </div>
           </div>
           <div class="form-group">

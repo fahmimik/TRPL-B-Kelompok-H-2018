@@ -18,7 +18,12 @@ public static function showPatientProfile(){
   $db = DB::getInstance();
   $req = $db->query("SELECT * from users where id_user=".$_SESSION['id_user']."");
   foreach ($req->fetchAll() as $post) {
-    $list[] = new Patient($post['id_user'],$post['username'],$post['password'],$post['nama'],$post['alamat']
+    $list[] = array(
+      'id_user' => $post['id_user'],
+      'username' => $post['username'],
+      'password' => $post['password'],
+      'nama' => $post['nama'],
+      'alamat' => $post['alamat'],
     );
   }
   return $list;
@@ -30,7 +35,15 @@ public static function editPatientProfile($id){
 
   $req = $db->query("SELECT * FROM users where id_user=$id");
   foreach ($req -> fetchAll() as $post) {
-    $list[] = new Patient($post['id_user'],$post['username'],$post['password'],$post['nama'],$post['alamat']
+    $list[] = array (
+      'id_user' => $post['id_user'],
+      'username' => $post['username'],
+      'password' => $post['password'],
+      'nama' => $post['nama'],
+      'alamat' => $post['alamat'],
+
+
+    // new Patient($post['id_user'],$post['username'],$post['password'],$post['nama'],$post['alamat']
       );
 
   }

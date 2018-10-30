@@ -4,8 +4,6 @@
 <head>
   <meta charset="utf-8">
   <title></title>
-  <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="resources/mycss/my.css">
   <script src="resources/bootstrap/js/bootstrap.min.js"></script>
   <script src="resources/jquery/jquery.min.js"></script>
 </head>

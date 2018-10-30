@@ -3,6 +3,8 @@
 <html>
   <head>
     <title></title>
+    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="resources/jquery/jquery.min.js"></script>
   </head>
   <body>
     <div class="padding-about">
@@ -20,20 +22,18 @@
       <th>nama</th>
       <th>alamat</th>
       <th>action</th>
-      <?php $i=1; ?>
       <?php foreach ($posts as $post) { ?>
         <tr>
 
-          <td><?php echo $post->id;  ?></td>
-          <td><?php echo $post->username; ?></td>
-          <td><?php echo $post->password; ?></td>
-          <td><?php echo $post->nama;  ?></td>
-          <td><?php echo $post->alamat;  ?></td>
-          <td>
-            <a href="?controller=doctor&action=editDoctorProfile&id=<?php echo $post->id ?>"><span class="glyphicon glyphicon-edit"></span></a>
+          <td><?php echo $post['id_user'];  ?></td>
+          <td><?php echo $post['username']; ?></td>
+          <td><?php echo $post['password']; ?></td>
+          <td><?php echo $post['nama'];  ?></td>
+          <td><?php echo $post['alamat'];  ?></td>
+          <td><a href="?controller=doctor&action=editDoctorProfile&id=<?php echo $post['id_user'] ?>"><button class="btn btn-primary">Edit</button></a>
           </td>
 
-        </tr><?php $i++;} ?>
+        </tr><?php } ?>
 
     </table>
         </div>

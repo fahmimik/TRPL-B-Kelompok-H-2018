@@ -20,8 +20,13 @@ public function editPatientProfile()
 }
 
 public function editDataPatient(){
-  $posts = Patient::editDataPatient($_GET["id"], $_GET["password"], $_GET["nama"], $_GET["alamat"]);
+  $posts = Patient::editDataPatient($_POST["id"], $_POST["password"], $_POST["nama"], $_POST["alamat"]);
   header("location:index.php?controller=patient&action=showPatientProfile");
+}
+
+public function tampilAddAppointment(){
+  require_once('views/pages/patientAppointment.php');
+
 }
 
 

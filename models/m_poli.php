@@ -21,7 +21,11 @@ $list=[];
 $db = DB::getInstance();
 $req = $db->query("SELECT *FROM poli ");
 foreach ($req->fetchAll() as $post) {
-  $list[] = new poli($post['id_poli'],$post['nama_poli']
+  $list[] = array(
+    'id_poli' => $post['id_poli'],
+    'nama_poli' => $post['nama_poli'],
+
+  // new poli($post['id_poli'],$post['nama_poli']
   );
 }
 return $list;
@@ -33,7 +37,10 @@ public static function editPoli($id){
 
   $req = $db->query("SELECT * FROM poli where id_poli=$id");
   foreach ($req -> fetchAll() as $post) {
-    $list[] = new poli($post['id_poli'],$post['nama_poli']
+    $list[] = array (
+      'id_poli' => $post['id_poli'],
+      'nama_poli' => $post['nama_poli'],
+    // new poli($post['id_poli'],$post['nama_poli']
       );
 
   }

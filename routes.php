@@ -53,35 +53,35 @@ function call($controller, $action){
 
   $controller ->{ $action }();
 }
-
-$controllers = array(
-
-  'login' => ['login','error','authen',
-  ],
-  'register' => ['register', 'addRegister', 'error',
-  ],
-  'home' => [ 'home','doctorHome','patientHome', 'about', 'showDoctorJadwalHome',
-  ],
-  'admin' => ['showAllDoctor' , 'addDoctor', 'tampilAddDoctor', 'deleteDoctor', 'editDoctor' , 'editDataDoctor', 'showAllPatient', 'showAllJadwalDoctor',
-  'addJadwalDoctor', 'addDataJadwalDoctor', 'deleteJadwalDoctor', 'editJadwalDoctor', 'editDataJadwalDoctor',
-  ],
-  'poli' => [ 'showAllPoli' , 'poliAddPoli' , 'addPoli' , 'poli' , 'deletePoli' , 'editPoli' , 'editDataPoli' ,
-  ],
-  'doctor' => [ 'showDoctorProfile' , 'editDoctorProfile', 'editDataDoctor',
-  ],
-  'patient' => [ 'showPatientProfile', 'editPatientProfile', 'editDataPatient' ,
-  ],
-
-);
-
-if (array_key_exists($controller, $controllers)) {
-  if (in_array($action, $controllers[$controller])) {
-    call($controller,$action);
-  } else {
-    call($controller,'error');
-  }
-
-} else {
-  call($controller,'error');
-}
+call($controller,$action);
+// $controllers = array(
+//
+//   'login' => ['login','error','authen',
+//   ],
+//   'register' => ['register', 'addRegister', 'error',
+//   ],
+//   'home' => [ 'home','doctorHome','patientHome', 'about', 'showDoctorJadwalHome',
+//   ],
+//   'admin' => ['showAllDoctor' , 'addDoctor', 'tampilAddDoctor', 'deleteDoctor', 'editDoctor' , 'editDataDoctor', 'showAllPatient', 'showAllJadwalDoctor',
+//   'addJadwalDoctor', 'addDataJadwalDoctor', 'deleteJadwalDoctor', 'editJadwalDoctor', 'editDataJadwalDoctor',
+//   ],
+//   'poli' => [ 'showAllPoli' , 'poliAddPoli' , 'addPoli' , 'poli' , 'deletePoli' , 'editPoli' , 'editDataPoli' ,
+//   ],
+//   'doctor' => [ 'showDoctorProfile' , 'editDoctorProfile', 'editDataDoctor',
+//   ],
+//   'patient' => [ 'showPatientProfile', 'editPatientProfile', 'editDataPatient' , 'tampilAddAppointment',
+//   ],
+//
+// );
+//
+// if (array_key_exists($controller, $controllers)) {
+//   if (in_array($action, $controllers[$controller])) {
+//     call($controller,$action);
+//   } else {
+//     call($controller,'error');
+//   }
+//
+// } else {
+//   call($controller,'error');
+// }
 ?>
