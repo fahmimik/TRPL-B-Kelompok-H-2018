@@ -117,7 +117,6 @@ public static function showAllJadwalDoctor(){
 }
 
 public static function addDataJadwalDoctor($nama,$nama_poli,$hari,$waktu){
-  // echo $nama;
   $db = DB::getInstance();
   $req =
   $db->query("INSERT INTO jadwal (id_jadwal, id_user, id_poli, hari, id_waktu)
@@ -143,8 +142,6 @@ public static function editJadwalDoctor($id){
     'nama_poli' => $post['nama_poli'],
     'hari' => $post['hari'],
     'waktu' => $post['waktu']
-
-  // new Admin($post['id_jadwal'],$post['nama'],$post['nama_poli'],$post['hari'],$post['waktu'],0,0
   );
 }
 return $list;

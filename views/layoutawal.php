@@ -1,6 +1,6 @@
 <nav class="navbar navbar-inverse navbar-fixed-top nav-background">
     <div class="container-fluid ">
-        <div class="navbar-header"><a class="navbar-brand" href="index.php">SELEBEW</a>
+        <div class="navbar-header"><a class="navbar-brand" href="index.php">DOCAP</a>
           <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
             <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
             <span class="icon-bar"></span><span class="icon-bar"></span></button>

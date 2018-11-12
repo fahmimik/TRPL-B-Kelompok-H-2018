@@ -63,7 +63,6 @@ class AdminController{
   {
     $posts = Admin::addDataJadwalDoctor($_GET["nama"], $_GET["nama_poli"], $_GET["hari"], $_GET["waktu"]);
     header("location:index.php?controller=admin&action=showAllJadwalDoctor");
-    ;
   }
   public function deleteJadwalDoctor()
   {

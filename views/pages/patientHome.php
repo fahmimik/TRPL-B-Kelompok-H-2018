@@ -27,8 +27,22 @@
                       <th>Nama Dokter</th>
                       <th>Poli</th>
                       <th>Hari</th>
+                      <th>Tanggal</th>
                       <th>Jam</th>
                       <th>Action</th>
+
+                      <?php foreach ((array) $posts as $post) { ?>
+                        <tr>
+                          <td><?php echo $post['id_appointment']  ?></td>
+                          <td><?php echo $post['nama'] ?></td>
+                          <td><?php echo $post['nama_poli'] ?></td>
+                          <td><?php echo $post['hari']  ?></td>
+                          <td><?php echo $post['tanggal']  ?></td>
+                          <td><?php echo $post['detail_waktu']  ?></td>
+
+
+                        </tr><?php } ?>
+
                     </tr>
                   </thead>
                 </table>

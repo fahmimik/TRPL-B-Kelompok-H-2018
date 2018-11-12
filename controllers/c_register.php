@@ -9,11 +9,20 @@ class RegisterController{
   }
   public function addRegister()
   {
-    $posts=Register::addRegister($_GET["username"],$_GET["password"],$_GET["nama"],$_GET["alamat"],$_GET["telpon"]);
+    $posts=Register::addRegister($_GET["username"],$_GET["password"],$_GET["nama"],$_GET["alamat"],$_GET["no_ktp"]);
+    if ($posts == 0){
+      ?>
+      <script>
+      alert("nama pengguna atau nomor ktp telah ada");
+      </script>
+      <?php
+      require_once('views/pages/register.php');
+    } elseif ($posts == 1) {
+      header("location:index.php");
+    }
 
-    header("location:index.php");
   }
 }
 
 
- ?>
+?>

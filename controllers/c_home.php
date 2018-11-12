@@ -25,7 +25,7 @@ public function patientHome(){
     header("location:index.php?controller=login&action=login");
     exit;
   }
-  // $post=Pasien::showAppointment();
+  $posts=Patient::patientAppointment();
   require_once("views/pages/patientHome.php");
 }
 

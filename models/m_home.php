@@ -16,7 +16,6 @@ class Home{
   }
 
   public static function showDoctorJadwalHome(){
-    $list=[];
     $db = DB::getInstance();
     $req = $db->query("SELECT j.id_jadwal, u.nama, p.nama_poli, j.hari, w.waktu  FROM jadwal j join users u on j.id_user=u.id_user join poli p on j.id_poli=p.id_poli join waktu w on j.id_waktu=w.id_waktu where u.id_user=".$_SESSION['id_user']."");
     foreach ($req->fetchAll() as $post) {
