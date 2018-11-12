@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2018 at 06:05 PM
+-- Generation Time: Nov 12, 2018 at 06:11 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.1.21
 
@@ -30,10 +30,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `appointment` (
   `id_appointment` int(11) NOT NULL,
-  `id_user_patient` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `id_jadwal` int(11) NOT NULL,
-  `tanggal` varchar(255) NOT NULL
+  `tanggal` varchar(255) NOT NULL,
+  `id_detail_waktu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `appointment`
+--
+
+INSERT INTO `appointment` (`id_appointment`, `id_user`, `id_jadwal`, `tanggal`, `id_detail_waktu`) VALUES
+(4, 12, 12, '2018-11-21', 13),
+(5, 12, 12, '2018-11-14', 12),
+(6, 12, 14, '2018-11-28', 13);
 
 -- --------------------------------------------------------
 
@@ -87,10 +97,11 @@ CREATE TABLE `jadwal` (
 --
 
 INSERT INTO `jadwal` (`id_jadwal`, `id_user`, `id_poli`, `hari`, `id_waktu`) VALUES
-(5, 6, 1, 'selasa', 1),
 (8, 7, 10, 'selasa', 3),
 (11, 2, 5, 'senin', 2),
-(12, 7, 1, 'rabu', 3);
+(12, 7, 1, 'rabu', 3),
+(13, 2, 10, 'rabu', 3),
+(14, 6, 1, 'rabu', 3);
 
 -- --------------------------------------------------------
 
@@ -145,22 +156,33 @@ CREATE TABLE `users` (
   `password` varchar(100) NOT NULL,
   `level` int(1) NOT NULL,
   `nama` varchar(250) NOT NULL,
-  `alamat` varchar(255) NOT NULL
+  `alamat` varchar(255) NOT NULL,
+  `no_ktp` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id_user`, `username`, `password`, `level`, `nama`, `alamat`) VALUES
-(1, 'admin', 'admin', 1, 'admin', 'dirahasiakan'),
-(2, 'bambang', 'bambang', 2, 'bambang lor ngihe', 'asdqw'),
-(4, 'sukri', 'sukri', 3, 'skruiman', 'jalan sukuri'),
-(6, 'sutris', 'sutris', 2, 'sutrisna', 'jalan sutris gg 10 no 6'),
-(7, 'gugun', 'gugun', 2, 'gugun', 'jalan gunung gundulan2'),
-(11, 'klkl', 'klkl', 3, 'klkl', 'klkl'),
-(12, 'pasien', 'pasien', 3, 'hahahahaha', 'hahaha'),
-(13, 'asdasd', 'asdasd', 3, 'asdasd', 'asdasd');
+INSERT INTO `users` (`id_user`, `username`, `password`, `level`, `nama`, `alamat`, `no_ktp`) VALUES
+(1, 'admin', 'admin', 1, 'admin', 'dirahasiakan', '0000000000000000'),
+(2, 'bambang', 'bambang', 2, 'om bambang in action', 'bambang hayuk', '1234567890123456'),
+(4, 'sukri', 'sukri', 3, 'skruiman', 'jalan sukuri', '2345678901234567'),
+(6, 'sutris', 'sutris', 2, 'sutrisna', 'jalan sutris gg 10 no 6', '3456789012345678'),
+(7, 'gugun', 'gugun', 2, 'gugun', 'jalan gunung gundulan2', '7856472634676581'),
+(11, 'klkl', 'klkl', 3, 'klkl', 'klkl', '0931029379823692'),
+(12, 'pasien', 'pasien', 3, 'pasien manjah', 'dari planet mars', '7638230909749091'),
+(13, 'asdasd', 'asdasd', 3, 'asdasd', 'asdasd', '7818236812638723'),
+(15, 'adam', 'adam', 3, 'adam', 'adam', '123123'),
+(19, 'adam1', 'adam1', 3, 'adam', 'adam', '123123123'),
+(36, 'adam2', 'adam2', 3, 'adam kedua', 'gurun sahara pasir berbisik', '678675765765'),
+(37, 'adam3', 'adam3', 3, 'dam adam', 'kjhkuhiuh', '4578765434567876'),
+(38, 'wewe', 'wewe', 3, 'wewe', 'wewewewewewe', '12356789'),
+(39, 'momomo', 'momomo', 3, 'momomo', 'ma sjdnakjsnd', '5678567891867257'),
+(40, 'mimimi', 'mimimi', 3, 'mimimimi', 'mimimalskdjalsid', '8765434567890'),
+(44, 'popo', 'popo', 3, 'popo', 'lakmsldkmqlkwmkm', '3456789876543'),
+(45, 'pipi', 'pipi', 3, 'hagfsdhagsd', 'fhgahsj;dhkagjsd67890', '09876543567'),
+(46, 'popop', 'ansdkajsd', 3, 'ajnskdjmasbdz', 'kshbdjbms780', '10863279213987');
 
 -- --------------------------------------------------------
 
@@ -190,7 +212,10 @@ INSERT INTO `waktu` (`id_waktu`, `waktu`) VALUES
 -- Indexes for table `appointment`
 --
 ALTER TABLE `appointment`
-  ADD PRIMARY KEY (`id_appointment`);
+  ADD PRIMARY KEY (`id_appointment`),
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_jadwal` (`id_jadwal`),
+  ADD KEY `id_detail_waktu` (`id_detail_waktu`);
 
 --
 -- Indexes for table `detail_waktu`
@@ -225,6 +250,8 @@ ALTER TABLE `poli`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`),
+  ADD UNIQUE KEY `no_ktp` (`no_ktp`),
+  ADD UNIQUE KEY `username` (`username`),
   ADD KEY `level` (`level`);
 
 --
@@ -241,7 +268,7 @@ ALTER TABLE `waktu`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id_appointment` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_appointment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `detail_waktu`
@@ -253,7 +280,7 @@ ALTER TABLE `detail_waktu`
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `poli`
@@ -265,7 +292,7 @@ ALTER TABLE `poli`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `waktu`
@@ -276,6 +303,14 @@ ALTER TABLE `waktu`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `appointment`
+--
+ALTER TABLE `appointment`
+  ADD CONSTRAINT `appointment_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
+  ADD CONSTRAINT `appointment_ibfk_2` FOREIGN KEY (`id_jadwal`) REFERENCES `jadwal` (`id_jadwal`),
+  ADD CONSTRAINT `appointment_ibfk_3` FOREIGN KEY (`id_detail_waktu`) REFERENCES `detail_waktu` (`id_detail_waktu`);
 
 --
 -- Constraints for table `detail_waktu`
