@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2018 at 06:11 PM
+-- Generation Time: Nov 17, 2018 at 03:40 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.1.21
 
@@ -43,7 +43,8 @@ CREATE TABLE `appointment` (
 INSERT INTO `appointment` (`id_appointment`, `id_user`, `id_jadwal`, `tanggal`, `id_detail_waktu`) VALUES
 (4, 12, 12, '2018-11-21', 13),
 (5, 12, 12, '2018-11-14', 12),
-(6, 12, 14, '2018-11-28', 13);
+(6, 12, 14, '2018-11-28', 13),
+(7, 12, 14, '2018-11-28', 15);
 
 -- --------------------------------------------------------
 
@@ -101,7 +102,8 @@ INSERT INTO `jadwal` (`id_jadwal`, `id_user`, `id_poli`, `hari`, `id_waktu`) VAL
 (11, 2, 5, 'senin', 2),
 (12, 7, 1, 'rabu', 3),
 (13, 2, 10, 'rabu', 3),
-(14, 6, 1, 'rabu', 3);
+(14, 6, 1, 'rabu', 3),
+(15, 6, 1, 'rabu', 1);
 
 -- --------------------------------------------------------
 
@@ -268,7 +270,7 @@ ALTER TABLE `waktu`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id_appointment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_appointment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `detail_waktu`
@@ -280,7 +282,7 @@ ALTER TABLE `detail_waktu`
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `poli`

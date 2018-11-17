@@ -95,6 +95,7 @@ public static function getPoli(){
 public static function ShowDoctorPatient($hari,$poli){
 
   $db = DB::getInstance();
+  $list = array();
   $req = $db->query("SELECT * from jadwal j
     join poli p on j.id_poli=p.id_poli
     join users u on j.id_user=u.id_user
@@ -111,6 +112,7 @@ public static function ShowDoctorPatient($hari,$poli){
 public static function ShowWaktuDokter($hari,$poli){
 
   $db = DB::getInstance();
+  $list = array();
   $req = $db->query("SELECT * from jadwal j
     join poli p on j.id_poli=p.id_poli
     join detail_waktu dw on j.id_waktu=dw.id_waktu
