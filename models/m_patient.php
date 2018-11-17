@@ -99,7 +99,9 @@ public static function ShowDoctorPatient($hari,$poli){
   $req = $db->query("SELECT * from jadwal j
     join poli p on j.id_poli=p.id_poli
     join users u on j.id_user=u.id_user
-    where j.hari='$hari' and p.nama_poli='$poli'");
+    where j.hari='$hari' and p.nama_poli='$poli'
+    group by u.nama"
+    );
   foreach ($req -> fetchAll() as $post) {
     $list[] = array(
       // 'id_poli' => $post['id_poli'],
@@ -109,15 +111,14 @@ public static function ShowDoctorPatient($hari,$poli){
   return $list;
 }
 
-public static function ShowWaktuDokter($hari,$poli){
-
+public static function ShowWaktuDokter($hari,$poli,$nama){
   $db = DB::getInstance();
   $list = array();
   $req = $db->query("SELECT * from jadwal j
     join poli p on j.id_poli=p.id_poli
     join detail_waktu dw on j.id_waktu=dw.id_waktu
-    -- join users u on u.id_user=n.nama
-    where j.hari='$hari' and p.nama_poli='$poli'");
+    join users u on j.id_user=u.id_user
+    where j.hari='$hari' and p.nama_poli='$poli' and u.nama='$nama'");
   foreach ($req -> fetchAll() as $post) {
     $list[] = array(
       // 'id_poli' => $post['id_poli'],

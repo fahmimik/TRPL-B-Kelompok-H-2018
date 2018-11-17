@@ -80,6 +80,27 @@ public static function editDataDoctor($id,$password,$nama,$alamat){
   return $req;
 }
 
+public static function doctorAppointment(){
+  $db = DB::getInstance();
+      $req = $db->query("SELECT a.id_appointment, j.id_user,u.nama, p.nama_poli, j.hari, a.tanggal, dw.detail_waktu
+         from jadwal j join users u on j.id_user=u.id_user
+         join appointment a on j.id_jadwal=a.id_jadwal
+         join poli p on j.id_poli=p.id_poli
+         join detail_waktu dw on a.id_detail_waktu=dw.id_detail_waktu where j.id_user=".$_SESSION['id_user']."");
+ foreach ($req -> fetchAll() as $post) {
+   $list[] = array(
+     'id_appointment' => $post['id_appointment'],
+     'nama' => $post['nama'],
+     'nama_poli' => $post['nama_poli'],
+     'hari' => $post['hari'],
+     'tanggal' => $post['tanggal'],
+     'detail_waktu' => $post['detail_waktu']
+
+   );
+ }
+ return $list;
+}
+
 
 }
 

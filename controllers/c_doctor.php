@@ -24,6 +24,12 @@ class DoctorController{
     header("location:index.php?controller=doctor&action=showDoctorProfile");
   }
 
+  public function doctorAppointment()
+  {
+    $posts = Doctor::doctorAppointment();
+    require_once("views/pages/doctorShowAppointment.php");
+  }
+
 
 
 

@@ -29,6 +29,24 @@ class PatientController{
     require_once('views/pages/patientAppointment.php');
 
   }
+  public function tampilAddWaktuApppointment(){
+    $tanggal = $_GET["tanggal"];
+    $day = date('D', strtotime($tanggal));
+    $dayList = array(
+      'Sun' => 'minggu',
+      'Mon' => 'senin',
+      'Tue' => 'selasa',
+      'Wed' => 'rabu',
+      'Thu' => 'kamis',
+      'Fri' => 'jumat',
+      'Sat' => 'sabtu'
+    );
+    $hari=$dayList[$day];
+    $poli=$_GET["nama_poli"];
+    $nama=$_GET["nama"];
+    $postPatient3 = Patient::ShowWaktuDokter($hari,$poli,$nama);
+    require_once('views/pages/patientAddWaktuAppointment.php');
+  }
 
   public function patientAddAppointment(){
     $tanggal = $_GET["tanggal"];
@@ -45,9 +63,9 @@ class PatientController{
     $poli=$_GET["nama_poli"];
     $hari=$dayList[$day];
     $postPatient2 = Patient::ShowDoctorPatient($hari,$poli);
-    $postPatient3 = Patient::ShowWaktuDokter($hari,$poli);
+    // $postPatient3 = Patient::ShowWaktuDokter($hari,$poli);
     // $posts = Patient::addAppointment($hari,$_GET["alamat"];);
-    if (empty($postPatient2) && empty($postPatient3)) {
+    if (empty($postPatient2) ) {
       // header('Location: '.$_SERVER["HTTP_REFERER"]);
       // echo
       if (empty($_SERVER['HTTP_REFERER']))
@@ -67,6 +85,8 @@ class PatientController{
     }
 
   }
+
+
 
   public function addAppointment(){
     $posts = Patient::addAppointment($_GET['nama'], $_GET['nama_poli'], $_GET['tanggal'],$_GET['detail_waktu']);
