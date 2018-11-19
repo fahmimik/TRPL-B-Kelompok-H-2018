@@ -89,7 +89,32 @@ class PatientController{
 
 
   public function addAppointment(){
+    // $posts = Patient::addAppointment($_GET['nama'], $_GET['nama_poli'], $_GET['tanggal'],$_GET['detail_waktu']);
+    $cek=0;
+    $postcek = Patient::cek($_GET['tanggal'],$_GET['detail_waktu']);
+    foreach ((array) $postcek as $post) {
+      $cek=$post[ 'count(*)'];
+      echo $cek;
+  }
+    if($cek==0){
+      // echo "ok";
     $posts = Patient::addAppointment($_GET['nama'], $_GET['nama_poli'], $_GET['tanggal'],$_GET['detail_waktu']);
+    header("location:index.php?controller=home&action=patientHome");
+  }else{
+    ?>
+    <script>
+    alert("SUDAH ADA BOSKUH");
+    window.history.back();
+    </script>
+    <?php
+
+  }
+
+  }
+
+  public function editAppointment()
+  {
+    $posts = Patient::editAppointment($_GET["id"]);
     header("location:index.php?controller=home&action=patientHome");
   }
 }

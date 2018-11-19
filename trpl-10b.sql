@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2018 at 03:40 PM
+-- Generation Time: Nov 19, 2018 at 04:38 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.1.21
 
@@ -33,18 +33,27 @@ CREATE TABLE `appointment` (
   `id_user` int(11) NOT NULL,
   `id_jadwal` int(11) NOT NULL,
   `tanggal` varchar(255) NOT NULL,
-  `id_detail_waktu` int(11) NOT NULL
+  `id_detail_waktu` int(11) NOT NULL,
+  `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `appointment`
 --
 
-INSERT INTO `appointment` (`id_appointment`, `id_user`, `id_jadwal`, `tanggal`, `id_detail_waktu`) VALUES
-(4, 12, 12, '2018-11-21', 13),
-(5, 12, 12, '2018-11-14', 12),
-(6, 12, 14, '2018-11-28', 13),
-(7, 12, 14, '2018-11-28', 15);
+INSERT INTO `appointment` (`id_appointment`, `id_user`, `id_jadwal`, `tanggal`, `id_detail_waktu`, `status`) VALUES
+(10, 12, 14, '2018-11-28', 15, 'Canceled'),
+(11, 12, 11, '2018-11-26', 10, 'Canceled'),
+(13, 12, 14, '2018-11-28', 12, 'Canceled'),
+(14, 12, 8, '2018-11-27', 13, 'Canceled'),
+(15, 12, 15, '2018-11-28', 5, 'Canceled'),
+(20, 12, 15, '2018-11-28', 1, 'Canceled'),
+(22, 12, 15, '2018-11-28', 2, 'Canceled'),
+(23, 12, 15, '2018-11-28', 2, 'Canceled'),
+(24, 12, 12, '2018-11-28', 11, 'Canceled'),
+(25, 12, 12, '2018-11-28', 11, 'Canceled'),
+(26, 12, 12, '2018-11-28', 11, 'Booked'),
+(27, 12, 8, '2018-11-27', 15, 'Booked');
 
 -- --------------------------------------------------------
 
@@ -270,7 +279,7 @@ ALTER TABLE `waktu`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id_appointment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_appointment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `detail_waktu`

@@ -29,6 +29,7 @@
                       <th>Hari</th>
                       <th>Tanggal</th>
                       <th>Jam</th>
+                      <th>Status</th>
                       <th>Action</th>
 
                       <?php foreach ((array) $posts as $post) { ?>
@@ -39,6 +40,10 @@
                           <td><?php echo $post['hari']  ?></td>
                           <td><?php echo $post['tanggal']  ?></td>
                           <td><?php echo $post['detail_waktu']  ?></td>
+                          <td><?php echo $post['status']  ?></td>
+                          <td>
+                            <a class="btn btn-danger" name="button"  href="?controller=doctor&action=editAppointmentDoctor&id=<?php echo $post['id_appointment'] ?>">Cancel</a>
+                          </td>
 
 
                         </tr><?php } ?>

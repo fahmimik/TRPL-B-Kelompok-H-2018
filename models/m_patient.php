@@ -60,11 +60,11 @@ public static function editDataPatient($id,$password,$nama,$alamat){
 
 public static function patientAppointment(){
   $db = DB::getInstance();
-      $req = $db->query("SELECT a.id_appointment, j.id_user,u.nama, p.nama_poli, j.hari, a.tanggal, dw.detail_waktu
+      $req = $db->query("SELECT a.id_appointment, j.id_user,u.nama, p.nama_poli, j.hari, a.tanggal, dw.detail_waktu, status
          from jadwal j join users u on j.id_user=u.id_user
          join appointment a on j.id_jadwal=a.id_jadwal
          join poli p on j.id_poli=p.id_poli
-         join detail_waktu dw on a.id_detail_waktu=dw.id_detail_waktu where a.id_user=".$_SESSION['id_user']."");
+         join detail_waktu dw on a.id_detail_waktu=dw.id_detail_waktu where a.id_user=".$_SESSION['id_user']." order by a.status asc");
  foreach ($req -> fetchAll() as $post) {
    $list[] = array(
      'id_appointment' => $post['id_appointment'],
@@ -72,12 +72,28 @@ public static function patientAppointment(){
      'nama_poli' => $post['nama_poli'],
      'hari' => $post['hari'],
      'tanggal' => $post['tanggal'],
-     'detail_waktu' => $post['detail_waktu']
+     'detail_waktu' => $post['detail_waktu'],
+     'status' => $post['status']
 
    );
  }
  return $list;
 }
+
+public static function cek($tanggal,$waktu){
+  // echo $tanggal;
+  // echo $waktu;
+  $db = DB::getInstance();
+      $req = $db->query("SELECT count(*) from appointment a JOIN detail_waktu dw on a.id_detail_waktu=dw.id_detail_waktu where  a.tanggal='$tanggal' and dw.detail_waktu=$waktu and status='Booked'");
+ foreach ($req -> fetchAll() as $post) {
+   $list[] = array(
+     'count(*)' => $post['count(*)'],
+   );
+ }
+ return $list;
+}
+
+
 
 public static function getPoli(){
   $db = DB::getInstance();
@@ -128,38 +144,24 @@ public static function ShowWaktuDokter($hari,$poli,$nama){
   return $list;
 }
 
-// public static function addJanji($nama,$waktu){
-//   $db = DB::getInstance();
-//   $req =
-//   $db->query("INSERT INTO appointment(id_appointment,id_user,id_jadwal,tanggal)
-//   VALUES (null,$_SESSION['id_user'],(select id_poli from poli where nama_poli='$nama_poli'),'".$hari."',(select id_waktu from waktu where waktu='$waktu'))");
-//   return $req;
-// }
-
-
-// public static function getJadwal(){
-//   $db = DB::getInstance();
-//   $req = $db->query("SELECT * from jadwal where hari=[]");
-//   foreach ($req -> fetchAll() as $post) {
-//     $list[] = array(
-//       'id_poli' => $post['id_poli'],
-//       'nama_poli' => $post['nama_poli']
-//     );
-//
-//   }
-//   return $list;
-// }
-
 public static function addAppointment($nama,$nama_poli,$hari,$waktu){
   $db = DB::getInstance();
   $req =
-  $db -> query("INSERT INTO appointment (id_appointment, id_user, id_jadwal, tanggal, id_detail_waktu)
+  $db -> query("INSERT INTO appointment (id_appointment, id_user, id_jadwal, tanggal, id_detail_waktu, status)
     VALUES (null, ".$_SESSION['id_user'].",(select j.id_jadwal from waktu w join detail_waktu dw on w.id_waktu=dw.id_waktu
       join jadwal j on w.id_waktu=j.id_waktu join poli p on j.id_poli=p.id_poli join users u on j.id_user=u.id_user
        where p.nama_poli='$nama_poli' and dw.detail_waktu='$waktu' and u.nama='$nama' ),'".$hari."',
-       (select id_detail_waktu from detail_waktu where detail_waktu='$waktu'))");
+       (select id_detail_waktu from detail_waktu where detail_waktu='$waktu'), '".Booked."')");
+       // }
   return $req;
   // ,(select dw.id_waktu from waktu w join detail_waktu dw on w.id_waktu=dw.id_waktu where dw.detail_waktu='$waktu')
+}
+
+public static function editAppointment($id){
+  $db = DB::getInstance();
+  $req =
+  $db -> query("UPDATE appointment set status = 'Canceled' where id_appointment='$id'");
+  return $req;
 }
 
 
