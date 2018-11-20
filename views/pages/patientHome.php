@@ -9,7 +9,8 @@
   <body class="padding-about">
     <h1 align="center">Jadwal Janji Temu</h1>
     <div class="container">
-      <a href="?controller=patient&action=tampilAddAppointment"><button type="button" class="btn btn-primary">Tambah</button></a>
+      <a href="?controller=patient&action=tampilAddAppointment" class="btn btn-primary">Tambah</a>
+      <a href="?controller=patient&action=patientAppointmentDone" class="btn btn-success">Appointment Done</a>
       <br><br>
 
       <div class="row">
@@ -25,6 +26,7 @@
                     <tr>
                       <th>ID</th>
                       <th>Nama Dokter</th>
+                      <th>Nama Pasien</th>
                       <th>Poli</th>
                       <th>Hari</th>
                       <th>Tanggal</th>
@@ -36,6 +38,7 @@
                         <tr>
                           <td><?php echo $post['id_appointment']  ?></td>
                           <td><?php echo $post['nama'] ?></td>
+                          <td><?php echo $post['nama_pasien'] ?></td>
                           <td><?php echo $post['nama_poli'] ?></td>
                           <td><?php echo $post['hari']  ?></td>
                           <td><?php echo $post['tanggal']  ?></td>

@@ -1,4 +1,4 @@
-<?php require_once('views/layoutDoctor.php')?>
+<?php require_once('views/layoutPatient.php')?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,9 +7,10 @@
     <script src="resources/jquery/jquery.min.js"></script>
   </head>
   <body class="padding-about">
-    <h1 align="center">Jadwal Janji Temu Dkter</h1>
+    <h1 align="center">Jadwal Janji Temu</h1>
     <div class="container">
-      <a class="btn btn-primary" href="?controller=doctor&action=doctorAppointmentDone">Done</a>
+      <!-- <a href="?controller=patient&action=tampilAddAppointment" class="btn btn-primary">Tambah</a> -->
+      <a href="?controller=home&action=patientHome" class="btn btn-primary">Booked</a>
       <br><br>
 
       <div class="row">
@@ -25,26 +26,25 @@
                     <tr>
                       <th>ID</th>
                       <th>Nama Dokter</th>
+                      <th>Nama Pasien</th>
                       <th>Poli</th>
                       <th>Hari</th>
                       <th>Tanggal</th>
                       <th>Jam</th>
                       <th>Status</th>
-                      <th>Action</th>
+
 
                       <?php foreach ((array) $posts as $post) { ?>
                         <tr>
                           <td><?php echo $post['id_appointment']  ?></td>
                           <td><?php echo $post['nama'] ?></td>
+                          <td><?php echo $post['nama_pasien'] ?></td>
                           <td><?php echo $post['nama_poli'] ?></td>
                           <td><?php echo $post['hari']  ?></td>
                           <td><?php echo $post['tanggal']  ?></td>
                           <td><?php echo $post['detail_waktu']  ?></td>
-                          <td><?php echo $post['status']  ?></td>
-                          <td>
-                            <a class="btn btn-danger" name="button"  href="?controller=doctor&action=editAppointmentDoctor&id=<?php echo $post['id_appointment'] ?>">Cancel</a>
-                            <a class="btn btn-danger" name="button"  href="?controller=doctor&action=editAppointmentDoctorDone&id=<?php echo $post['id_appointment'] ?>">Done</a>
-                          </td>
+                          <td><?php echo $post['status'] ?></td>
+
 
 
                         </tr><?php } ?>

@@ -30,9 +30,21 @@ class DoctorController{
     require_once("views/pages/doctorShowAppointment.php");
   }
 
+  public function doctorAppointmentDone()
+  {
+    $posts = Doctor::doctorAppointmentDone();
+    require_once("views/pages/doctorShowAppointmentDone.php");
+  }
+
   public function editAppointmentDoctor()
   {
     $posts = Doctor::editAppointmentDoctor($_GET["id"]);
+    header("location:index.php?controller=doctor&action=doctorAppointment");
+  }
+
+  public function editAppointmentDoctorDone()
+  {
+    $posts = Doctor::editAppointmentDoctorDone($_GET["id"]);
     header("location:index.php?controller=doctor&action=doctorAppointment");
   }
 

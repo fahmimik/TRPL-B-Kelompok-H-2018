@@ -9,7 +9,7 @@
   <body class="padding-about">
     <h1 align="center">Jadwal Janji Temu Dkter</h1>
     <div class="container">
-      <a class="btn btn-primary" href="?controller=doctor&action=doctorAppointmentDone">Done</a>
+      <a class="btn btn-success" href="?controller=doctor&action=doctorAppointment">Booked</a>
       <br><br>
 
       <div class="row">
@@ -30,7 +30,7 @@
                       <th>Tanggal</th>
                       <th>Jam</th>
                       <th>Status</th>
-                      <th>Action</th>
+                      
 
                       <?php foreach ((array) $posts as $post) { ?>
                         <tr>
@@ -41,10 +41,7 @@
                           <td><?php echo $post['tanggal']  ?></td>
                           <td><?php echo $post['detail_waktu']  ?></td>
                           <td><?php echo $post['status']  ?></td>
-                          <td>
-                            <a class="btn btn-danger" name="button"  href="?controller=doctor&action=editAppointmentDoctor&id=<?php echo $post['id_appointment'] ?>">Cancel</a>
-                            <a class="btn btn-danger" name="button"  href="?controller=doctor&action=editAppointmentDoctorDone&id=<?php echo $post['id_appointment'] ?>">Done</a>
-                          </td>
+
 
 
                         </tr><?php } ?>

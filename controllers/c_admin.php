@@ -82,7 +82,14 @@ class AdminController{
 
   }
 
-
+  public function adminShowAppointment(){
+    $posts=Admin::adminShowAppointment();
+    require_once("views/pages/adminShowAppointment.php");
+  }
+  public function adminShowAppointmentCanceled(){
+    $posts=Admin::adminShowAppointmentCanceled();
+    require_once("views/pages/adminShowAppointmentCanceled.php");
+  }
   // public function editJadwalDoctor(){
   //
   // }

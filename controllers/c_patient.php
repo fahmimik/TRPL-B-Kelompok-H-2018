@@ -1,11 +1,11 @@
 <?php
 class PatientController{
 
-  public function showPatientAppointment(){
-    $posts = Patient::showPatientAppointment();
-    require_once("views/pages/patientHome.php");
-
-  }
+  // public function showPatientAppointment(){
+  //   $posts = Patient::showPatientAppointment();
+  //   require_once("views/pages/patientHome.php");
+  //
+  // }
 
   public function showPatientProfile()
   {
@@ -117,6 +117,12 @@ class PatientController{
     $posts = Patient::editAppointment($_GET["id"]);
     header("location:index.php?controller=home&action=patientHome");
   }
+
+  public function patientAppointmentDone(){
+    $posts=Patient::patientAppointmentDone();
+    require_once("views/pages/patientHomeDone.php");
+  }
+
 }
 
 
