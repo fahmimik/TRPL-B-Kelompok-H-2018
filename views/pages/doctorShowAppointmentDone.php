@@ -25,17 +25,19 @@
                     <tr>
                       <th>ID</th>
                       <th>Nama Dokter</th>
+                      <th>Nama Pasien</th>
                       <th>Poli</th>
                       <th>Hari</th>
                       <th>Tanggal</th>
                       <th>Jam</th>
                       <th>Status</th>
-                      
+
 
                       <?php foreach ((array) $posts as $post) { ?>
                         <tr>
                           <td><?php echo $post['id_appointment']  ?></td>
                           <td><?php echo $post['nama'] ?></td>
+                          <td><?php echo $post['nama_pasien'] ?></td>
                           <td><?php echo $post['nama_poli'] ?></td>
                           <td><?php echo $post['hari']  ?></td>
                           <td><?php echo $post['tanggal']  ?></td>

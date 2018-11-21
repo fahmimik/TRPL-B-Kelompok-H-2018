@@ -1,23 +1,5 @@
 <?php
 class Admin{
-  // public $id;
-  // public $username;
-  // public $password;
-  // public $nama;
-  // public $alamat;
-  // public $telepon;
-  // public $waktu;
-
-function __construct(/*$id,$username,$password,$level,$nama,$alamat,$waktu*/){
-    // $this->id=$id;
-    // $this->username=$username;
-    // $this->password=$password;
-    // $this->level=$level;
-    // $this->nama=$nama;
-    // $this->alamat=$alamat;
-    // $this->waktu=$waktu;
-
-  }
 
   public static function addDoctor($username,$password,$nama,$alamat){
     $db= DB::getInstance();

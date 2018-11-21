@@ -38,6 +38,7 @@ function call($controller, $action){
     case 'patient':
     $controller=new PatientController();
     require_once('models/m_patient.php');
+    require_once('models/m_admin.php');
     break;
 
     case 'doctor':

@@ -26,6 +26,7 @@ class PatientController{
 
   public function tampilAddAppointment(){
     $postPatient = Patient::getPoli();
+    $postJadwal = Admin::showAllJadwalDoctor();
     require_once('views/pages/patientAppointment.php');
 
   }

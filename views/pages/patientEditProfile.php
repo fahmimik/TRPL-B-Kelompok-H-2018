@@ -28,19 +28,19 @@
           <div class="form-group">
             <label class="col-sm-2 control-label">password</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="password" placeholder="Masukan Password" value="<?php echo $post['password'] ?>">
+              <input type="text" class="form-control" name="password" placeholder="Masukan Password" value="<?php echo $post['password'] ?>" required>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">nama</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="nama" placeholder="Masukan Nama" value="<?php echo $post['nama'] ?>">
+              <input type="text" class="form-control" name="nama" placeholder="Masukan Nama" value="<?php echo $post['nama'] ?>" required>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">alamat</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="alamat" placeholder="Masukan Alamat" value="<?php echo $post['alamat'] ?>">
+              <input type="text" class="form-control" name="alamat" placeholder="Masukan Alamat" value="<?php echo $post['alamat'] ?>" required>
             </div>
           </div>
           <div class="form-group">
