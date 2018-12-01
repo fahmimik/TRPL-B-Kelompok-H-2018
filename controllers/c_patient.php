@@ -97,7 +97,7 @@ class PatientController{
       $cek=$post[ 'count(*)'];
       echo $cek;
   }
-    if($cek==0){
+    if($cek<3){
       // echo "ok";
     $posts = Patient::addAppointment($_GET['nama'], $_GET['nama_poli'], $_GET['tanggal'],$_GET['detail_waktu']);
     header("location:index.php?controller=home&action=patientHome");
