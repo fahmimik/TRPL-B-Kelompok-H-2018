@@ -45,7 +45,7 @@
         <div class="form-group">
 					<label class="col-sm-6 control-label">Nomor KTP</label>
 					<div class="col-sm-6">
-						<input type="number" class="form-control" name="no_ktp" placeholder="Masukan Nomor KTP" size="16"  required>
+						<input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" class="form-control" name="no_ktp" placeholder="Masukan Nomor KTP" maxlength="16" required>
 						<small ><i>masukkan 16 digit angka</small></i>
 					</div>
 				</div>

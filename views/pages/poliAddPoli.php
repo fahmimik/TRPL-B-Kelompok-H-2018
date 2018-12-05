@@ -8,7 +8,7 @@
     <script src="resources/jquery/jquery.min.js"></script>
   </head>
   <body>
-    <h1 class="padding-about" align="center">TAMBAH POLI</h1>
+    <h1 class="padding-about" align="center">TAMBAH SPESIALIS</h1>
     <br><br>
     	<div align="center" class="container">
 
@@ -18,9 +18,9 @@
     			<input type="hidden" name="controller" value="poli">
     			<input type="hidden" name="action" value="addPoli">
     				<div class="form-group">
-    					<label class="col-sm-2 control-label">Poli</label>
+    					<label class="col-sm-2 control-label">Spesialis</label>
     					<div class="col-sm-10">
-    						<input type="text" class="form-control" name="nama_poli" placeholder="Masukan Nama Poli" required>
+    						<input type="text" class="form-control" name="nama_poli" placeholder="Masukan Nama Spesialis" required>
     					</div>
     				</div>
     				<div class="form-group">

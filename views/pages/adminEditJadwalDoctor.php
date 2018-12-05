@@ -30,7 +30,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-4 control-label" style="text-align:left">Nama Poli</label>
+            <label class="col-sm-4 control-label" style="text-align:left">Spesialis</label>
             <div class="col-sm-4">
 <label class="col-sm-2 control-label"><?php echo $post['nama_poli']  ?></label>
               <!-- <input type="text" class="form-control" name="username" placeholder="Masukan Username" required> -->

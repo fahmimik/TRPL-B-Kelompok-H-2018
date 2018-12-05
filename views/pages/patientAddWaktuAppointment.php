@@ -42,7 +42,7 @@
           </div>
 
           <div class="form-group">
-            <label class="col-sm-4 control-label" style="text-align:left">Nama Poli : </label>
+            <label class="col-sm-4 control-label" style="text-align:left">Spesialis : </label>
             <!-- <div class="col-sm-4"> -->
               <select class="col-sm-4 btn btn-default dropdown-toggle" name="nama_poli"  type="button"  data-toggle="dropdown" ><span class="caret"></span>
 

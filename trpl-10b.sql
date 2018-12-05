@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2018 at 05:35 PM
+-- Generation Time: Dec 05, 2018 at 06:37 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.1.21
 
@@ -42,9 +42,11 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`id_appointment`, `id_user`, `id_jadwal`, `tanggal`, `id_detail_waktu`, `status`) VALUES
-(28, 12, 8, '2018-11-27', 13, 'Done'),
-(29, 12, 14, '2018-11-28', 15, 'Done'),
-(30, 12, 14, '2018-11-28', 13, 'Booked');
+(40, 57, 16, '2018-12-17', 2, 'Canceled'),
+(41, 57, 21, '2018-12-24', 6, 'Done'),
+(42, 57, 21, '2018-12-24', 6, 'Booked'),
+(43, 57, 21, '2018-12-24', 6, 'Done'),
+(44, 57, 21, '2018-12-24', 10, 'Booked');
 
 -- --------------------------------------------------------
 
@@ -98,12 +100,14 @@ CREATE TABLE `jadwal` (
 --
 
 INSERT INTO `jadwal` (`id_jadwal`, `id_user`, `id_poli`, `hari`, `id_waktu`) VALUES
-(8, 7, 10, 'selasa', 3),
-(11, 2, 5, 'senin', 2),
-(12, 7, 1, 'rabu', 3),
-(13, 2, 10, 'rabu', 3),
-(14, 6, 1, 'rabu', 3),
-(15, 6, 1, 'rabu', 1);
+(16, 52, 1, 'senin', 1),
+(17, 52, 1, 'selasa', 1),
+(19, 52, 1, 'rabu', 1),
+(20, 52, 1, 'kamis', 1),
+(21, 51, 1, 'senin', 2),
+(22, 51, 1, 'selasa', 2),
+(23, 51, 1, 'rabu', 2),
+(24, 51, 1, 'kamis', 2);
 
 -- --------------------------------------------------------
 
@@ -142,9 +146,10 @@ CREATE TABLE `poli` (
 
 INSERT INTO `poli` (`id_poli`, `nama_poli`) VALUES
 (1, 'Gigi'),
-(5, 'sikil'),
-(9, 'usus'),
-(10, 'pantat');
+(5, 'Gizi'),
+(9, 'Jantung'),
+(10, 'Paru'),
+(11, 'Syaraf');
 
 -- --------------------------------------------------------
 
@@ -168,23 +173,15 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `level`, `nama`, `alamat`, `no_ktp`) VALUES
 (1, 'admin', 'admin', 1, 'admin', 'dirahasiakan', '0000000000000000'),
-(2, 'bambang', 'bambang', 2, 'om bambang in action', 'bambang hayuk', '1234567890123456'),
-(4, 'sukri', 'sukri', 3, 'skruiman', 'jalan sukuri', '2345678901234567'),
-(6, 'sutris', 'sutris', 2, 'sutrisna', 'jalan sutris gg 10 no 6', '3456789012345678'),
-(7, 'gugun', 'gugun', 2, 'gugun', 'jalan gunung gundulan2', '7856472634676581'),
-(11, 'klkl', 'klkl', 3, 'klkl', 'klkl', '0931029379823692'),
-(12, 'pasien', 'pasien', 3, 'pasien manjah', 'dari planet mars', '7638230909749091'),
-(13, 'asdasd', 'asdasd', 3, 'asdasd', 'asdasd', '7818236812638723'),
-(15, 'adam', 'adam', 3, 'adam', 'adam', '123123'),
-(19, 'adam1', 'adam1', 3, 'adam', 'adam', '123123123'),
-(36, 'adam2', 'adam2', 3, 'adam kedua', 'gurun sahara pasir berbisik', '678675765765'),
-(37, 'adam3', 'adam3', 3, 'dam adam', 'kjhkuhiuh', '4578765434567876'),
-(38, 'wewe', 'wewe', 3, 'wewe', 'wewewewewewe', '12356789'),
-(39, 'momomo', 'momomo', 3, 'momomo', 'ma sjdnakjsnd', '5678567891867257'),
-(40, 'mimimi', 'mimimi', 3, 'mimimimi', 'mimimalskdjalsid', '8765434567890'),
-(44, 'popo', 'popo', 3, 'popo', 'lakmsldkmqlkwmkm', '3456789876543'),
-(45, 'pipi', 'pipi', 3, 'hagfsdhagsd', 'fhgahsj;dhkagjsd67890', '09876543567'),
-(46, 'popop', 'ansdkajsd', 3, 'ajnskdjmasbdz', 'kshbdjbms780', '10863279213987');
+(47, 'toni', 'toni', 2, 'Toni Kusumo, dr., Sp.GK-DFN', 'Jalan', ''),
+(50, 'subandi', 'subandi', 2, 'Ahmad Subandi, dr.,Sp.GK-DFN', 'Jalan Jawa Nomor 2', '1234567987654356'),
+(51, 'diana', 'diana', 2, 'Diana Hanindio, drg', 'Jalan Sulawesi nomor 36', '9876543234567876'),
+(52, 'eka', 'eka', 2, 'Eka Putri, drg', 'Jalan Pakusari nomor 135', '2345676543234567'),
+(53, 'samuel', 'samuel', 2, 'Samuel, dr., Sp.JP', 'Perumahan Gunung Batu blok JK nomor 56B', '5676543234567898'),
+(54, 'bambang', 'bambang', 2, 'Bambang, dr., Sp.P', 'Jalan Letjen Sutoyo nomor 122', '3456785432345678'),
+(55, 'agus', 'agus', 2, 'Agus, dr., Sp.P', 'Perumahan Villa Tegal Besar blok C nomor 14', '3456789876545678'),
+(56, 'eko', 'eko', 2, 'Eko Susilo, dr., Sp.P', 'Jalan Panjaitan nomor 77', '2345678908765456'),
+(57, 'pasien', 'pasien', 3, 'Bratasena Anggabayu', 'Perumahan Villa Tegal Besar blok C nomor 14', '4567898765434567');
 
 -- --------------------------------------------------------
 
@@ -270,7 +267,7 @@ ALTER TABLE `waktu`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id_appointment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_appointment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `detail_waktu`
@@ -282,19 +279,19 @@ ALTER TABLE `detail_waktu`
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `poli`
 --
 ALTER TABLE `poli`
-  MODIFY `id_poli` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_poli` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `waktu`

@@ -90,16 +90,25 @@ class PatientController{
 
 
   public function addAppointment(){
-    // $posts = Patient::addAppointment($_GET['nama'], $_GET['nama_poli'], $_GET['tanggal'],$_GET['detail_waktu']);
+    $tanggal = $_GET["tanggal"];
+    $day = date('D', strtotime($tanggal));
+    $dayList = array(
+      'Sun' => 'minggu',
+      'Mon' => 'senin',
+      'Tue' => 'selasa',
+      'Wed' => 'rabu',
+      'Thu' => 'kamis',
+      'Fri' => 'jumat',
+      'Sat' => 'sabtu'
+    );
+    $hari=$dayList[$day];
     $cek=0;
     $postcek = Patient::cek($_GET['tanggal'],$_GET['detail_waktu']);
     foreach ((array) $postcek as $post) {
       $cek=$post[ 'count(*)'];
-      echo $cek;
   }
     if($cek<3){
-      // echo "ok";
-    $posts = Patient::addAppointment($_GET['nama'], $_GET['nama_poli'], $_GET['tanggal'],$_GET['detail_waktu']);
+    $posts = Patient::addAppointment($_GET['nama'], $_GET['nama_poli'], $_GET['tanggal'],$_GET['detail_waktu'],$hari);
     header("location:index.php?controller=home&action=patientHome");
   }else{
     ?>

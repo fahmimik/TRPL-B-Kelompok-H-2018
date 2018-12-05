@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group">
-          <label class="col-sm-4 control-label" style="text-align:left"> Pilih Poli</label>
+          <label class="col-sm-4 control-label" style="text-align:left">Spesialis</label>
           <select class="col-sm-4 btn btn-default dropdown-toggle" name="nama_poli"  type="button"  data-toggle="dropdown" > <span class="caret"></span>
             <?php foreach ($postPatient as $post) { ?>
               <option><?php echo $post['nama_poli']; ?> </option>
@@ -49,7 +49,7 @@
                       <thead>
                         <tr>
                           <th>Nama Dokter</th>
-                          <th>Poli</th>
+                          <th>Spesialis</th>
                           <th>Hari</th>
                           <th>Jam</th>
                           <?php foreach ($postJadwal as $post) { ?>

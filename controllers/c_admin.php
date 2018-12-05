@@ -12,10 +12,25 @@ class AdminController{
     require_once ('views/pages/adminAddDoctor.php');
   }
 
-  public function addDoctor()
-  {
-    $posts = Admin::addDoctor($_GET["username"], $_GET["password"], $_GET["nama"], $_GET["alamat"]);
-    header("location:index.php?controller=home&action=home");
+  // public function addDoctor()
+  // {
+  //   $posts = Admin::addDoctor($_GET["username"], $_GET["password"], $_GET["nama"], $_GET["alamat"]);
+  //   header("location:index.php?controller=home&action=home");
+  // }
+
+  public function addDoctor() {
+    $posts=Admin::addDoctor($_GET["username"],$_GET["password"],$_GET["nama"],$_GET["alamat"],$_GET["no_ktp"]);
+    if ($posts == 0){
+      ?>
+      <script>
+      alert("nama pengguna atau nomor ktp telah ada");
+      </script>
+      <?php
+      require_once('views/pages/adminAddDoctor.php');
+    } elseif ($posts == 1) {
+      header("location:index.php?controller=home&action=home");
+    }
+
   }
 
   public function editDoctor()

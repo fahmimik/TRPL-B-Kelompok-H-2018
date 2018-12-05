@@ -29,7 +29,7 @@
               </select>
           </div>
           <div class="form-group">
-            <label class="col-sm-4 control-label" style="text-align:left">Nama Poli</label>
+            <label class="col-sm-4 control-label" style="text-align:left">Spesialis</label>
               <select name="nama_poli" class="col-sm-4 btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> <span class="caret"></span>
                 <?php foreach ($posts2 as $post) { ?>
                 <option><?php echo $post['nama_poli']; ?> </option>

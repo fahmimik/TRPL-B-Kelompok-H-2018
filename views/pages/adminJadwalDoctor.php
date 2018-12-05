@@ -28,7 +28,7 @@
                     <tr>
                       <th>ID</th>
                       <th>Nama Dokter</th>
-                      <th>Poli</th>
+                      <th>Spesialis</th>
                       <th>Hari</th>
                       <th>Jam</th>
                       <th>Action</th>

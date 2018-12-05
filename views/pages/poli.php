@@ -7,25 +7,25 @@
   <script src="resources/jquery/jquery.min.js"></script>
 </head>
 <body class=padding-about>
-  <h1 align="center">POLI</h1>
+  <h1 align="center">SPESIALIS</h1>
 
   <div class="container">
-    <a href="?controller=poli&action=poliAddPoli"><button type="button" class="btn btn-info">Tambah Poli</button></a>
+    <a href="?controller=poli&action=poliAddPoli"><button type="button" class="btn btn-info">Tambah Spesialis</button></a>
     <br><br>
 
     <div class="row">
       <div class="col-lg-12">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>List Poli</h3>
+            <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>List Spesialis</h3>
           </div>
           <div class="panel-body">
             <div class="table-responsive">
 
     <table class="table table-bordered table-hover table-striped">
 
-      <th>id Poli</th>
-      <th>Nama Poli</th>
+      <th>id Spesialis</th>
+      <th>Nama Spesialis</th>
       <th>Action</th>
 
       <?php foreach ($posts as $post) { ?>

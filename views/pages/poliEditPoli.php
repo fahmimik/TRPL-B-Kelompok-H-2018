@@ -8,7 +8,7 @@
   </head>
   <body>
 
-    <h1 class="padding-about" align="center">EDIT Poli</h1>
+    <h1 class="padding-about" align="center">EDIT SPESIALIS</h1>
     <br><br>
     <div class="container">
       <div class="col-md-6">
@@ -20,9 +20,9 @@
         <input type="hidden" name="action" value="editDataPoli">
         <input type="hidden" name="id" value="<?php echo $post['id_poli']; ?>">
           <div class="form-group">
-            <label class="col-sm-2 control-label">Nama Poli</label>
+            <label class="col-sm-2 control-label">Nama Spesialis</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="nama_poli" placeholder="Masukan Nama Poli" value="<?php echo $post['nama_poli'] ?>">
+              <input type="text" class="form-control" name="nama_poli" placeholder="Masukan Nama Spesialis" value="<?php echo $post['nama_poli'] ?>">
             </div>
           </div>
 

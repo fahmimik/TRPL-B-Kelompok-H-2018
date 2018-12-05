@@ -26,7 +26,7 @@
                       <th>ID</th>
                       <th>Nama Dokter</th>
                       <th>Nama Pasien</th>
-                      <th>Poli</th>
+                      <th>Spesialis</th>
                       <th>Hari</th>
                       <th>Tanggal</th>
                       <th>Jam</th>

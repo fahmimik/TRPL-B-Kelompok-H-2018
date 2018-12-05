@@ -152,14 +152,14 @@ class Patient{
             return $list;
           }
 
-          public static function addAppointment($nama,$nama_poli,$hari,$waktu){
+          public static function addAppointment($nama,$nama_poli,$tanggal,$waktu,$hari){
             $db = DB::getInstance();
             $req =
             $db -> query("INSERT INTO appointment (id_appointment, id_user, id_jadwal, tanggal, id_detail_waktu, status)
             VALUES (null, ".$_SESSION['id_user'].",(select j.id_jadwal from waktu w join detail_waktu dw on w.id_waktu=dw.id_waktu
               join jadwal j on w.id_waktu=j.id_waktu join poli p on j.id_poli=p.id_poli join users u on j.id_user=u.id_user
-              where p.nama_poli='$nama_poli' and dw.detail_waktu='$waktu' and u.nama='$nama' ),'".$hari."',
-              (select id_detail_waktu from detail_waktu where detail_waktu='$waktu'), '".Booked."')");
+              where p.nama_poli='$nama_poli' and dw.detail_waktu='$waktu' and u.nama='$nama' and j.hari='$hari' ),'".$tanggal."',
+              (select id_detail_waktu from detail_waktu where detail_waktu='$waktu'), 'Booked') " );
               return $req;
             }
 
